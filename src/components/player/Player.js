@@ -6,14 +6,16 @@ import playerWalk from './player-walk.png';
 const Player = props => 
   <div
     style={{
-      position: 'relative',
+      position: 'absolute',
       top: props.position[1],
       left: props.position[0],
+      width: '64px',
+      height: '64px',
       backgroundImage: `url(${playerWalk})`
     }}
   />;
 
-mapStateToProps = state => ({
+const mapStateToProps = state => ({
   ...state.player
 });
 
