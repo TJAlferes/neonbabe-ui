@@ -6,6 +6,7 @@ import handleMovement from './movement';  // remove
 const Player = props => (
   <div
     style={{
+      zIndex: '2',
       position: 'absolute',
       top: props.position[1],
       left: props.position[0],

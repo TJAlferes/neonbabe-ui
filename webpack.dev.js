@@ -8,6 +8,9 @@ module.exports = {
     contentBase: './dist'
   },
   devtool: 'cheap-module-eval-source-map',
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -39,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.(png|ico)$/,
-        use: 'url-loader'
+        use: 'file-loader'  // TO DO: set up url-loader for small images
       }
     ]
   },

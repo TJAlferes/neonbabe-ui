@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import Player from '../player/Player';
+import MapContainer from '../map/MapContainer';
+import PlayerContainer from '../player/PlayerContainer';
 
 import './app.css';
 
@@ -11,7 +12,9 @@ const App = props => {
   //return isLoggedIn ? <HomeReturn /> : <HomeNew />;
   return (
     <div id="screen">
-      <Player />
+      <MapContainer>
+        <PlayerContainer />
+      </MapContainer>
     </div>
   );
 }
