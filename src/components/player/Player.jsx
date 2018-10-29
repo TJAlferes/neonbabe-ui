@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import playerWalk from './player-walk.png';
+import handleMovement from './movement';  // remove
 
-const Player = props => 
+const Player = props => (
   <div
     style={{
       position: 'absolute',
@@ -13,10 +13,8 @@ const Player = props =>
       height: '64px',
       backgroundImage: `url(${playerWalk})`
     }}
-  />;
+  />
+);
 
-const mapStateToProps = state => ({
-  ...state.player
-});
-
-export default connect(mapStateToProps)(Player);
+// change this
+export default handleMovement(Player);
