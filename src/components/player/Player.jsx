@@ -1,21 +1,23 @@
 import React from 'react';
 
-import playerWalk from './player-walk.png';
-import handleMovement from './movement';  // remove
+import playerWalk from './player-walk-16.png';
 
 const Player = props => (
   <div
+    id="player"
     style={{
-      zIndex: '2',
       position: 'absolute',
+      /*
       top: props.position[1],
       left: props.position[0],
-      width: '64px',
-      height: '64px',
+      */
+      top: 112,
+      left: 172,
+      width: '16px',
+      height: '16px',
       backgroundImage: `url(${playerWalk})`
     }}
   />
 );
 
-// change this
-export default handleMovement(Player);
+export default Player;

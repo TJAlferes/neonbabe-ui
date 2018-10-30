@@ -1,5 +1,10 @@
 import { connect } from 'react-redux';
 
-import Map from './Map.jsx';
+import { moveMap } from './actions';
+import TheMap from './Map.jsx';
 
-export default connect()(Map);
+const mapStateToProps = state => ({
+  ...state.theMap
+});
+
+export default connect(mapStateToProps)(moveMap(TheMap)); // HOC pattern; change

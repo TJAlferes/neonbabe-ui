@@ -7,7 +7,7 @@ import * as actionTypes from './actionTypes';
 
 });*/
 
-const PLAYER_SIZE = 64;
+const PLAYER_SIZE = 16;
 
 export const movePlayer = player => {
   //return dispatch => {};

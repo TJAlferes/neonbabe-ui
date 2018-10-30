@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import updateObject from '../../utils/updateObject';
+//import updateObject from '../../utils/updateObject';
 
 const initialState = {
   position: [0, 0]

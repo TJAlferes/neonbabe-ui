@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import MapContainer from '../map/MapContainer';
-import PlayerContainer from '../player/PlayerContainer';
-
-import './app.css';
+//import WorldContainer from '../world/WorldContainer';
+import World from '../world/World.jsx';
 
 const App = props => {
   //const [ isLoggedIn, setIsLoggedIn ] = useState(null);
@@ -11,10 +9,8 @@ const App = props => {
   //if (isLoggedIn === null) return 'Loading...';
   //return isLoggedIn ? <HomeReturn /> : <HomeNew />;
   return (
-    <div id="screen">
-      <MapContainer>
-        <PlayerContainer />
-      </MapContainer>
+    <div id="app">
+      <World />
     </div>
   );
 }
