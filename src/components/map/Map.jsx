@@ -15,7 +15,11 @@ const TheMap = props => (
       backgroundPosition: `
         ${props.backgroundPosition[0]}px
         ${props.backgroundPosition[1]}px
-      `
+      `,
+      transitionProperty: 'background-position',
+      transitionDelay: '0s',
+      transitionDuration: '250ms',
+      transitionTimingFunction: 'linear'
     }}
   />
 );

@@ -1,6 +1,8 @@
 import store from '../../store/store';
 
 import * as actionTypes from './actionTypes';
+//import debounce from '../../utils/debounce';
+import throttle from '../../utils/throttle';
 
 /*export const movePlayer = player => ({
   type: actionTypes.MOVE_PLAYER,
@@ -11,7 +13,7 @@ const MAP_SIZE = 16;
 
 export const moveMap = theMap => {
   //return dispatch => {};
-  const getNewPosition = direction => {
+  let getNewPosition = direction => {
     const oldPosition = store.getState().theMap.backgroundPosition;
     console.log(oldPosition[0]);
     console.log(oldPosition[1]);
@@ -23,17 +25,18 @@ export const moveMap = theMap => {
     }
   }
 
-  const dispatchMove = direction => {
+  let dispatchMove = direction => {
     store.dispatch({
       type: actionTypes.MOVE_MAP,
       payload: {
         backgroundPosition: getNewPosition(direction)
       }
-    })
+    });
   }
 
-  const handleKeyDown = e => {
+  let handleKeyDown = e => {
     e.preventDefault();
+    e.stopPropagation();
     switch (e.keyCode) {
       case 38: return dispatchMove('NORTH');
       case 39: return dispatchMove('EAST');
@@ -43,7 +46,13 @@ export const moveMap = theMap => {
     }
   }
 
-  window.addEventListener('keydown', e => handleKeyDown(e));
+  //window.addEventListener('keypress', e => handleKeyPress(e));
+  window.addEventListener(
+    'keydown',
+    throttle(250, function(e) {
+      return handleKeyDown(e);
+    })
+  );
 
   return theMap;
 }
