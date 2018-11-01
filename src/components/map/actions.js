@@ -9,6 +9,7 @@ import throttle from '../../utils/throttle';
 
 });*/
 
+// import these from a config constants
 const MAP_SIZE = 16;
 
 export const moveMap = theMap => {
@@ -37,21 +38,18 @@ export const moveMap = theMap => {
   let handleKeyDown = e => {
     e.preventDefault();
     e.stopPropagation();
-    /*
-    let wait;
-
-    if (e.shiftKey) {
-      wait = 200;
-    } else {
-      wait = 300;
-    }
-    */
-    switch (e.keyCode) {
-      case 38: return dispatchMove('NORTH');
-      case 39: return dispatchMove('EAST');
-      case 40: return dispatchMove('SOUTH');
-      case 37: return dispatchMove('WEST');
-      default: console.log(e.keyCode);
+    
+    //let wait = e.shiftKey ? 200 : 300;
+    //console.log(wait);
+    // .repeat is obsolete? doesn't work in some browsers?
+    if (e.repeat) {
+      switch (e.keyCode) {
+        case 38: return dispatchMove('NORTH');
+        case 39: return dispatchMove('EAST');
+        case 40: return dispatchMove('SOUTH');
+        case 37: return dispatchMove('WEST');
+        default: console.log(e.keyCode);
+      }
     }
   }
 
@@ -59,10 +57,10 @@ export const moveMap = theMap => {
   window.addEventListener(
     'keydown',
     throttle(
-      300, 
+      250,
       function(e) {
         handleKeyDown(e);
-      }, 
+      },
       true
     )
   );

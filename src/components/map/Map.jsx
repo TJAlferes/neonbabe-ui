@@ -18,7 +18,7 @@ const TheMap = props => (
       `,
       transitionProperty: 'background-position',
       transitionDelay: '0s',
-      transitionDuration: '300ms',
+      transitionDuration: '250ms',
       transitionTimingFunction: 'linear'
     }}
   />

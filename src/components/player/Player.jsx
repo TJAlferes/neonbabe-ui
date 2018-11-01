@@ -1,6 +1,6 @@
 import React from 'react';
 
-import playerWalk from './player-walk-16.png';
+import playerWalk from './player-example-32.png';
 
 const Player = props => (
   <div
@@ -15,7 +15,11 @@ const Player = props => (
       left: 172,
       width: '16px',
       height: '16px',
-      backgroundImage: `url(${playerWalk})`
+      backgroundImage: `url(${playerWalk})`,
+      backgroundPosition: `
+        ${props.backgroundPosition[0]}px
+        ${props.backgroundPosition[1]}px
+      `
     }}
   />
 );

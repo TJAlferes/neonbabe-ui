@@ -1,1 +1,1 @@
-export const MOVE_PLAYER = 'MOVE_PLAYER';
+export const FACE_PLAYER = 'FACE_PLAYER';

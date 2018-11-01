@@ -2,7 +2,7 @@ import * as actionTypes from './actionTypes';
 //import updateObject from '../../utils/updateObject';
 
 const initialState = {
-  position: [0, 0]
+  backgroundPosition: [16, 16],
 };
 
 /*const addIngredient = (state, action) => {
@@ -25,7 +25,7 @@ const movePlayer = (state, action) => {
 const playerReducer = (state = initialState, action) => {
   switch (action.type) {
     //case actionTypes.MOVE_PLAYER: return { ...action.payload };
-    case actionTypes.MOVE_PLAYER: return {...action.payload};
+    case actionTypes.FACE_PLAYER: return {...action.payload};
     default: return state;
   }
 }
