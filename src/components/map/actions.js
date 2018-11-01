@@ -37,6 +37,15 @@ export const moveMap = theMap => {
   let handleKeyDown = e => {
     e.preventDefault();
     e.stopPropagation();
+    /*
+    let wait;
+
+    if (e.shiftKey) {
+      wait = 200;
+    } else {
+      wait = 300;
+    }
+    */
     switch (e.keyCode) {
       case 38: return dispatchMove('NORTH');
       case 39: return dispatchMove('EAST');
@@ -49,9 +58,13 @@ export const moveMap = theMap => {
   //window.addEventListener('keypress', e => handleKeyPress(e));
   window.addEventListener(
     'keydown',
-    throttle(250, function(e) {
-      return handleKeyDown(e);
-    })
+    throttle(
+      300, 
+      function(e) {
+        handleKeyDown(e);
+      }, 
+      true
+    )
   );
 
   return theMap;
