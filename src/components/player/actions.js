@@ -50,12 +50,12 @@ export const movePlayer = player => {
 
     //if (e.repeat) return;  // obsolete, and doesn't work in some browsers?
 
-    switch (e.keyCode) {
+    switch (e.key) {
       case 38: return dispatchFacing('NORTH');
       case 39: return dispatchFacing('EAST');
       case 40: return dispatchFacing('SOUTH');
       case 37: return dispatchFacing('WEST');
-      default: console.log(e.keyCode);
+      default: console.log(e.key);
     }
   }
 

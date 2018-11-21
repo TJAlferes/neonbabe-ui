@@ -42,13 +42,32 @@ export const moveMap = theMap => {
     //let wait = e.shiftKey ? 200 : 300;
     //console.log(wait);
     // .repeat is obsolete? doesn't work in some browsers?
-    if (e.repeat) {
-      switch (e.keyCode) {
+
+    if (!waiting) {
+      var timer = setTimeout(function() {}, 200);
+      timer();
+      var timestampOne = Date.now();
+    }
+    let waiting = true;
+
+    document.onkeyup = function() {
+      releasedKey = true;
+      var timestampTwo = Date.now();
+      if (timestampOne < timestampTwo) {
+        clearTimeout(timer);
+      }
+      clearTimeout(timer);
+    }
+    waiting = false;
+
+
+    if (!waiting) {  // if no keyup (formerly e.repeat)
+      switch (e.key) {
         case 38: return dispatchMove('NORTH');
         case 39: return dispatchMove('EAST');
         case 40: return dispatchMove('SOUTH');
         case 37: return dispatchMove('WEST');
-        default: console.log(e.keyCode);
+        default: console.log(e.key);
       }
     }
   }
@@ -63,6 +82,13 @@ export const moveMap = theMap => {
       },
       true
     )
+  );
+
+  window.addEventListener(
+    'keydown',
+    function(e) {
+
+    }
   );
 
   return theMap;
