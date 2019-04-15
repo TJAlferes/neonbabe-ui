@@ -104,6 +104,7 @@ const throttle = (delay, noTrailing, callback, debounceMode) => {
 	return wrapper;
 }
 */
+// DEV NOTE: debounce and throttle can also be done via redux-saga
 function throttle(wait, func, immediate) {
   let timeout;
 	return function() {

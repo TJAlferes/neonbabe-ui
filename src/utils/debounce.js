@@ -54,6 +54,7 @@ const debounce = (func, wait) => {
   return debounced;
 }
 */
+// DEV NOTE: debounce and throttle can also be done via redux-saga
 const debounce = (func, wait, immediate) => {
   let timeout;
   return () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-//import WorldContainer from '../world/WorldContainer';
-import World from '../world/World.jsx';
+//import './app.css';
+import World from 'components/World/World';
 
 const App = props => {
   //const [ isLoggedIn, setIsLoggedIn ] = useState(null);
@@ -9,7 +9,7 @@ const App = props => {
   //if (isLoggedIn === null) return 'Loading...';
   //return isLoggedIn ? <HomeReturn /> : <HomeNew />;
   return (
-    <div id="app">
+    <div className="app" id="app">
       <World />
     </div>
   );

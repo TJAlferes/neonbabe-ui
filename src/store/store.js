@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { combineReducers, createStore } from 'redux';
 
 import mapReducer from '../components/map/reducer';
 import playerReducer from '../components/player/reducer';
