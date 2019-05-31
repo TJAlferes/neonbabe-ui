@@ -1,13 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 
 import './world.css';
-import Map from '../Map/Map';
-import Player from '../Player/Player';
+import Map from '../Map/Map.tsx';
+import Player from '../Player/Player.tsx';
 
 //import tiles
 //import store from '../../store/store';
 
-const World = props => {
+type Props = {};
+
+const World = (props : Props) => {
   //store.dispatch({type: 'ADD_TILES', payload: {tiles}});
   return (
     <div className="world" id="world">

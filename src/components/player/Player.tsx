@@ -1,11 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { movePlayer } from './actions';
 import './player.css';
 import playerWalk from './player-example-32.png';
 
-const Player = props => (
+type Props = {
+  backgroundPosition: string;
+};
+
+type State = {
+  state: object;
+};
+
+const Player = (props : Props) => (
   <div
     className="player"
     id="player"
@@ -16,7 +24,7 @@ const Player = props => (
   />
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state : State) => ({
   ...state.player
 });
 

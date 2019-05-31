@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import * as React from 'react';
 
 //import './app.css';
-import World from 'components/World/World';
+import World from 'components/World/World.tsx';
 
-const App = props => {
+type Props = {};
+
+const App = (props : Props) => {
   //const [ isLoggedIn, setIsLoggedIn ] = useState(null);
 
   //if (isLoggedIn === null) return 'Loading...';

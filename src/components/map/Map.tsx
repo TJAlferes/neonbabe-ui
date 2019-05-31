@@ -5,7 +5,11 @@ import { moveMap } from './actions';
 import './map.css';
 import mapExample from './map-example.png';
 
-const Map = props => (
+type Props = {
+  backgroundPosition: string;
+};
+
+const Map = (props : Props) => (
   <div
     className="map"
     id="map"

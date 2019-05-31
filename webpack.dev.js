@@ -4,14 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  devServer: {
-    contentBase: './dist'
-  },
+  devServer: {contentBase: './dist'},
   devtool: 'cheap-module-eval-source-map',
-  resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
-  entry: './src/index.js',
+  resolve: {extensions: ['*', '.js', '.jsx', '.ts', '.tsx', '.json']},
+  entry: './src/index.tsx',
+  externals: {'react': 'React', 'react-dom': 'ReactDOM'},
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
@@ -23,6 +20,11 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'awesome-typescript-loader'
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        loader: 'source-map-loader'
       },
       {
         test: /\.(js|jsx)$/,
